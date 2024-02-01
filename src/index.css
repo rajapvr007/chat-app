@@ -1,3 +1,112 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .inputLR {
+    @apply w-full  border-black/35 border-b-2 p-2   focus:outline-none;
+  }
+  .home {
+    @apply flex items-center justify-center h-screen bg-blue-400/50;
+  }
+  .container {
+    @apply flex w-[100%] h-[100%] lg:w-[65%] lg:h-[80%]  rounded-xl shadow-2xl;
+  }
+
+  /* sidebar style   */
+  .sidebar {
+    @apply flex flex-col  w-[30%] h-full  border-l-0 border-r-2 rounded-tl-xl rounded-bl-xl border-gray-500 bg-blue-500/30 overflow-hidden;
+  }
+
+  .navbar {
+    @apply flex items-center justify-between w-full h-16 bg-blue-400/50;
+  }
+  .avatar {
+    @apply w-8 h-8 rounded-full;
+  }
+  .btn-Navbar {
+    @apply rounded bg-gray-200/50 hover:bg-gray-400 py-1 px-2  text-[14px];
+  }
+  .searchForm {
+    input {
+      @apply w-full   p-1   focus:outline-none;
+    }
+  }
+
+  /* Searchbar style   */
+  .searchbar {
+    @apply border border-b-[1px] border-gray-400 border-t-0 border-l-0 border-r-0;
+  }
+
+  .useChat {
+    @apply flex p-2 space-x-4 items-center;
+    img {
+      @apply w-[40px] rounded-full;
+    }
+    span {
+      @apply text-[14px] font-semibold;
+    }
+    p {
+      @apply text-[10px] text-gray-500;
+    }
+  }
+
+  /* chat  right side */
+  .chat {
+    @apply flex flex-col justify-between  w-[70%] h-full rounded-br-xl;
+    .chatHeader {
+      @apply flex justify-between items-center w-full h-[64px] bg-red-400 rounded-tr-xl p-6;
+      .chatHeaderInfo {
+        h3 {
+          @apply text-[14px] font-semibold;
+        }
+      }
+      .chatHeaderRight {
+        @apply flex space-x-2;
+        .icons {
+          @apply w-5 h-5 flex;
+        }
+      }
+    }
+  }
+
+  /* intput css   */
+  .input {
+    @apply h-[64px] text-[14px] font-semibold  flex items-center justify-between rounded-br-xl;
+  }
+
+  /* Messages  */
+
+  .messages {
+    @apply overflow-auto h-full w-full bg-chatBoxColor;
+    .message {
+      @apply flex  gap-[20px] m-5;
+      .messageInfo {
+        @apply flex flex-col text-gray-500 font-semibold;
+        img {
+          @apply w-[40px] rounded-full;
+        }
+      }
+      .messageContent {
+        @apply max-w-[80%] flex flex-col  gap-[10px];
+        p {
+          @apply bg-white p-3 max-w-max;
+          border-radius: 0px 10px 10px 10px;
+        }
+        img {
+          @apply w-[50%];
+        }
+      }
+      &.owner {
+        @apply flex flex-row-reverse text-right;
+        .messageContent {
+          @apply items-end;
+          p {
+            @apply bg-blue-500 text-white;
+            border-radius: 10px 0px 10px 10px;
+          }
+        }
+      }
+    }
+  }
+}
